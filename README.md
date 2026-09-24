@@ -10,7 +10,7 @@ Choose your difficulty, make your guesses, use hints wisely, and try to beat you
 
 ## 🎮 Play the Game
 
-🔗 **Live Demo:** Coming soon...
+🔗 **Live Demo:** https://guessit-nine.vercel.app/
 
 💻 **GitHub:** https://github.com/hematuta96/guessit
 
