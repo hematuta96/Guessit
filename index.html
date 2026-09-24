@@ -1,0 +1,114 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GuessIt! — The Number Game</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <main class="game">
+
+    <header class="topbar">
+      <div class="brand">G<span>!</span></div>
+      <div class="best">🏆 BEST <strong id="bestScore">0</strong></div>
+    </header>
+
+    <div class="heading">
+      <span class="eyebrow">THE ULTIMATE NUMBER CHALLENGE</span>
+      <h1>GUESS<span>IT!</span></h1>
+      <p>One secret number. Can you crack it?</p>
+    </div>
+
+    <nav class="modes" aria-label="Difficulty">
+      <button class="mode" data-level="easy">🌱 EASY</button>
+      <button class="mode active" data-level="medium">⚡ MEDIUM</button>
+      <button class="mode" data-level="hard">🔥 HARD</button>
+    </nav>
+
+    <section class="board" id="board">
+      <div class="board-top">
+        <span class="live-dot"></span>
+        <span id="roundStatus">SECRET NUMBER</span>
+        <span id="rangeText">1 — 100</span>
+      </div>
+
+      <div class="mystery" id="mystery">?</div>
+
+      <p id="boardCaption">THE NUMBER IS HIDING...</p>
+
+      <div class="range-track">
+        <span id="lowBound">1</span>
+        <div class="range-line"><span id="rangeFill"></span></div>
+        <span id="highBound">100</span>
+      </div>
+    </section>
+
+    <div class="feedback" id="message" role="status"
+      aria-live="polite">
+      Pick a number and take your shot!
+    </div>
+
+    <form id="guessForm" class="guess-form">
+      <label for="guessInput">YOUR NEXT GUESS</label>
+      <div class="input-group">
+        <input type="number" id="guessInput" min="1" max="100"
+          step="1" placeholder="00" required autocomplete="off">
+        <button type="submit" id="guessButton">
+          GUESS <span>➜</span>
+        </button>
+      </div>
+    </form>
+
+    <div class="lives-panel">
+      <div class="panel-heading">
+        <span>YOUR CHANCES</span>
+        <strong id="attemptText">0 / 8</strong>
+      </div>
+      <div id="lives" class="lives" aria-label="Remaining attempts"></div>
+      <div class="progress-track">
+        <div id="progress"></div>
+      </div>
+    </div>
+
+    <div class="stats">
+      <div class="stat">
+        <span>⭐ SCORE</span>
+        <strong id="score">1500</strong>
+      </div>
+      <div class="stat">
+        <span>🎯 GUESSES</span>
+        <strong id="attempts">0</strong>
+      </div>
+      <div class="stat">
+        <span>🔥 STREAK</span>
+        <strong id="streak">0</strong>
+      </div>
+    </div>
+
+    <div class="actions">
+      <button id="hintButton" class="hint" type="button">
+        💡 GET A HINT <small>−150 PTS</small>
+      </button>
+      <button id="restartButton" class="restart" type="button">
+        ↻ NEW GAME
+      </button>
+    </div>
+
+    <section id="result" class="result" hidden aria-live="polite">
+      <div class="result-emoji" id="resultEmoji">🏆</div>
+      <h2 id="resultTitle">YOU GOT IT!</h2>
+      <p id="resultDescription"></p>
+      <strong id="resultScore"></strong>
+      <button id="playAgain" type="button">PLAY AGAIN ➜</button>
+    </section>
+
+    <footer>GUESSIT! &nbsp;•&nbsp; THINK FAST, GUESS SMART.</footer>
+
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
